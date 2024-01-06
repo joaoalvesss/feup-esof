@@ -10,8 +10,7 @@ class PetProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final animalRef =
-    FirebaseFirestore.instance.collection('animal').doc(animalId);
-
+        FirebaseFirestore.instance.collection('animal').doc(animalId);
 
     return StreamBuilder<DocumentSnapshot>(
       stream: animalRef.snapshots(),
@@ -43,44 +42,56 @@ class PetProfile extends StatelessWidget {
                       route: '/profile',
                       animalId: animalId,
                     ),
-                    const SizedBox(height: 15,),
-                    FavouriteButton(profileId: animalId),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    FavouriteButton(
+                      profileId: animalId,
+                      key: const Key('favourite'),
+                    ),
                     Container(
                       padding: const EdgeInsets.all(15),
                       child: Column(
                         children: [
                           Text(
                             'Specie: $animalSpecie',
+                            key: const Key('specie'),
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 10),
                           Text(
                             'Breed: $animalBreed',
+                            key: const Key('breed'),
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 10),
                           Text(
                             'Gender: $animalGender',
+                            key: const Key('gender'),
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 10),
                           Text(
                             'Age: $animalAge',
+                            key: const Key('age'),
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 10),
                           Text(
                             'Description: $animalDescription',
+                            key: const Key('description'),
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 10),
                           Text(
                             'Medical history: $animalMedicalHistory',
+                            key: const Key('medical-history'),
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 10),
                           Text(
                             'Adoption fee: $animalAdoptionFee€',
+                            key: const Key('adoption-fee'),
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ],

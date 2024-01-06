@@ -39,13 +39,17 @@ class ProfileInfo extends StatelessWidget {
                         padding: const EdgeInsets.all(4),
                         child: Text(
                           shelterName,
+                          key: const Key('shelter-name'),
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
                       Container(
                         alignment: Alignment.topLeft,
                         padding: const EdgeInsets.all(4),
-                        child: Text(shelterAddress),
+                        child: Text(
+                          shelterAddress,
+                          key: const Key('shelter-address'),
+                        ),
                       ),
                       Container(
                         alignment: Alignment.topLeft,
@@ -55,6 +59,7 @@ class ProfileInfo extends StatelessWidget {
                             const Icon(Icons.phone),
                             Text(
                               shelterPhone.toString(),
+                              key: const Key('shelter-phone'),
                             ),
                           ],
                         ),
@@ -62,6 +67,7 @@ class ProfileInfo extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.all(4),
                         child: Row(
+                          key: const Key('shelter-time'),
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

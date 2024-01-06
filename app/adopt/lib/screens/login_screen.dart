@@ -64,6 +64,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: const Key('login-page'),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/images/Background.png'),
@@ -91,6 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 30.0),
                 TextField(
+                  key: const Key('email-field'),
                   controller: _emailController,
                   decoration: InputDecoration(
                     labelText: 'Email',
@@ -109,6 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 30.0),
                 TextField(
+                  key: const Key('password-field'),
                   controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
@@ -128,6 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 30.0),
                 ElevatedButton(
+                  key: const Key('submit-button'),
                   onPressed: _isLoading ? null : _login,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFC49677),
@@ -139,18 +143,19 @@ class _LoginPageState extends State<LoginPage> {
                   child: _isLoading
                       ? const CircularProgressIndicator()
                       : const Text(
-                    'Login',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Source Sans Pro',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17,
-                    ),
-                  ),
+                          'Login',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Source Sans Pro',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                          ),
+                        ),
                 ),
                 if (_hasError) const SizedBox(height: 15),
                 Text(
                   _errorMessage,
+                  key: const Key('error-message'),
                   style: const TextStyle(
                     color: Color(0xFFFF2E00),
                     fontWeight: FontWeight.bold,
